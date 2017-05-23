@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Recipe Book</string>
+    <string name="menu_title">Main Menu</string>
+    <string name="menu_opt_one">Find Recipes</string>
+    <string name="menu_opt_two">Make Grocery List</string>
+    <string name="menu_opt_three">Recipe Book</string>
+    <string name="menu_opt_four">Ingredients</string>
+    <string name="background_descrip">Background for main menu</string>
+
+
+</resources>
