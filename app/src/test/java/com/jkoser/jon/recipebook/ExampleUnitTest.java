@@ -1,4 +1,4 @@
-package com.example.jon.recipebook;
+package com.jkoser.jon.recipebook;
 
 import org.junit.Test;
 

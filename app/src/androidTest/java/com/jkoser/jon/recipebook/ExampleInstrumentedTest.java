@@ -1,4 +1,4 @@
-package com.example.jon.recipebook;
+package com.jkoser.jon.recipebook;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.jon.recipebook", appContext.getPackageName());
+        assertEquals("com.jkoser.jon.recipebook", appContext.getPackageName());
     }
 }

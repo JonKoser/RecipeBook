@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jon.recipebook.MainActivityMenu"
+    tools:context="com.jkoser.jon.recipebook.MainActivityMenu"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -65,6 +65,7 @@
         android:layout_width="194dp"
         android:layout_height="48dp"
         android:layout_marginBottom="32dp"
+        android:onClick="onFindRecipeClick"
         android:text="@string/menu_opt_one"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintLeft_toLeftOf="parent"
