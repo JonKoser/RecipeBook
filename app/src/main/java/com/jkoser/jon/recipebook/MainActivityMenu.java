@@ -17,8 +17,9 @@ public class MainActivityMenu extends AppCompatActivity {
 
     public void onFindRecipeClick(View view) {
         Intent intent = new Intent(this, PickExistingIngredients.class);
-        String nextActivity = "FindRecipe";
+        String nextActivity = "FindRecipes";
         intent.putExtra(EXTRA_NEXT_ACTIVITY, nextActivity);
         startActivity(intent);
     }
+
 }
