@@ -22,4 +22,11 @@ public class MainActivityMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onGroceryListClick(View view) {
+        Intent intent = new Intent(this, PickExistingIngredients.class);
+        String nextActivity = "GroceryList";
+        intent.putExtra(EXTRA_NEXT_ACTIVITY, nextActivity);
+        startActivity(intent);
+    }
+
 }
