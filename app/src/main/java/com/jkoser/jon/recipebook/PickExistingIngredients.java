@@ -1,7 +1,9 @@
 package com.jkoser.jon.recipebook;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,6 +15,7 @@ public class PickExistingIngredients extends AppCompatActivity implements OnClic
     ArrayAdapter<String> adapter;
     Button button;
     String nextActivity;
+    public static final String EXTRA_SELECTED_INGREDIENTS = "com.jkoser.recipebook.SELECTED_INGREDIENTS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,4 +44,6 @@ public class PickExistingIngredients extends AppCompatActivity implements OnClic
     public void onClick(View view) {
         return;
     }
+
+
 }
