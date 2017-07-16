@@ -47,6 +47,7 @@ public class AddIngredients extends AppCompatActivity implements OnClickListener
         Float priceFloat = Float.parseFloat(priceString);
         Integer priceCents = (int)(priceFloat * 100);
 
+        // TODO: I'm going to want to create a database helper class and open the database when I open the app
         database = openOrCreateDatabase("recipe_book.db", MODE_PRIVATE, null);
         database.execSQL("CREATE TABLE IF NOT EXISTS Ingredients (Name TEXT, Price_Cents INTEGER)");
         String query = "INSERT INTO Ingredients VALUES ('" + nameString + "', " + priceCents + ");";
