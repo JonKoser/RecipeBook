@@ -9,66 +9,68 @@
     tools:layout_editor_absoluteX="0dp">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/mainMenuBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/wood"
         android:contentDescription="@string/background_descrip"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/ingredientsButton"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="130dp"
+        android:onClick="onIngredientsClick"
         android:text="@string/menu_opt_four"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/button3"
-        app:layout_constraintRight_toRightOf="@+id/button3"
+        app:layout_constraintLeft_toLeftOf="@+id/recipeBookButton"
+        app:layout_constraintRight_toRightOf="@+id/recipeBookButton"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/recipeBookButton"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="32dp"
         android:text="@string/menu_opt_three"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintLeft_toLeftOf="@+id/button2"
-        app:layout_constraintRight_toRightOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/ingredientsButton"
+        app:layout_constraintLeft_toLeftOf="@+id/groceryListButton"
+        app:layout_constraintRight_toRightOf="@+id/groceryListButton"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/groceryListButton"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="32dp"
         android:onClick="onGroceryListClick"
         android:text="@string/menu_opt_two"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintLeft_toLeftOf="@+id/button"
-        app:layout_constraintRight_toRightOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/recipeBookButton"
+        app:layout_constraintLeft_toLeftOf="@+id/findRecipesButton"
+        app:layout_constraintRight_toRightOf="@+id/findRecipesButton"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/findRecipesButton"
         android:layout_width="194dp"
         android:layout_height="48dp"
         android:layout_marginBottom="32dp"
         android:onClick="onFindRecipeClick"
         android:text="@string/menu_opt_one"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/groceryListButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintBottom_creator="1"
@@ -76,7 +78,7 @@
         tools:layout_constraintRight_creator="1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mainMenuTitle"
         android:layout_width="174dp"
         android:layout_height="38dp"
         android:layout_marginLeft="105dp"

@@ -14,5 +14,12 @@
     </string-array>
     <string name="existingIngredientTitle">Select which ingredients you already have:</string>
     <string name="nextButton">Next</string>
+    <string name="ingredient_title">Ingredients</string>
+    <string name="view_ingredients">View/Edit Ingredients</string>
+    <string name="add_ingredients">Add an Ingredient</string>
+    <string name="ingredient_name">Ingredient Name</string>
+    <string name="package_price">Package Price</string>
+    <string name="money">$</string>
+    <string name="add_button">Add</string>
 
 </resources>

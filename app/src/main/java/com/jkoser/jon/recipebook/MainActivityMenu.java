@@ -15,6 +15,10 @@ public class MainActivityMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
     }
 
+    /**
+     *
+     * @param view
+     */
     public void onFindRecipeClick(View view) {
         Intent intent = new Intent(this, PickExistingIngredients.class);
         String nextActivity = "FindRecipes";
@@ -22,6 +26,10 @@ public class MainActivityMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     *
+     * @param view
+     */
     public void onGroceryListClick(View view) {
         Intent intent = new Intent(this, PickExistingIngredients.class);
         String nextActivity = "GroceryList";
@@ -29,4 +37,12 @@ public class MainActivityMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     *
+     * @param view
+     */
+    public void onIngredientsClick(View view) {
+        Intent intent = new Intent(this, IngredientsMenu.class);
+        startActivity(intent);
+    }
 }

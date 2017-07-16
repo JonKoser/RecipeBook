@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PickExistingIngredients"></activity>
+        <activity android:name=".IngredientsMenu"></activity>
+        <activity android:name=".AddIngredients"></activity>
     </application>
 
 </manifest>
