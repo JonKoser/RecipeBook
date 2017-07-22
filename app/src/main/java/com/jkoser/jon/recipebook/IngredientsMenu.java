@@ -10,6 +10,8 @@ import android.widget.Button;
 public class IngredientsMenu extends AppCompatActivity implements OnClickListener {
     Button addIngredientMenuButton;
     Button editIngredientsButton;
+    Button deleteIngredientButton;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class IngredientsMenu extends AppCompatActivity implements OnClickListene
     private void findViews() {
         addIngredientMenuButton = (Button) findViewById(R.id.addIngredientMenuButton);
         editIngredientsButton = (Button) findViewById(R.id.editIngredientsButton);
+        deleteIngredientButton = (Button) findViewById(R.id.deleteButton);
+
     }
 
     /**
@@ -39,6 +43,9 @@ public class IngredientsMenu extends AppCompatActivity implements OnClickListene
                 Intent intent = new Intent(this, AddIngredients.class);
                 startActivity(intent);
                 break;
+            case R.id.deleteButton:
+                dbHelper = new DBHelper(this);
+                dbHelper.deleteAllIngredients();
         }
 
     }

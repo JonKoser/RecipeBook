@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.view.View.OnClickListener;
-// import android.widget.CursorAdapter;
 
 public class PickExistingIngredients extends AppCompatActivity implements OnClickListener {
     ListView listView;

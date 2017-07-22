@@ -5,9 +5,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
+import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Jon on 7/16/17.
@@ -70,5 +69,13 @@ public class DBHelper extends SQLiteOpenHelper {
             ingredients.moveToNext();
         }
         return names;
+    }
+
+    /**
+     * Testing method - clears the ingredients table
+     */
+    public void deleteAllIngredients() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM Ingredients");
     }
 }
