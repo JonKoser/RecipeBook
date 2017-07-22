@@ -4,6 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.Cursor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jon on 7/16/17.
@@ -49,5 +53,22 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("Price_Cents", priceInCents);
         database.insert("Ingredients", null, values);
         return true;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String[] getIngredientNames() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor ingredients = db.rawQuery("SELECT Name FROM Ingredients", null);
+        ingredients.moveToFirst();
+        int totalItems = ingredients.getCount();
+        String[] names = new String[totalItems];
+        for (int i = 0; i < totalItems; i ++) {
+            names[i] = (ingredients.getString(ingredients.getColumnIndex("Name")));
+            ingredients.moveToNext();
+        }
+        return names;
     }
 }

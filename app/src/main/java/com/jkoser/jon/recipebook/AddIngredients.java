@@ -2,14 +2,12 @@ package com.jkoser.jon.recipebook;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-
-public class AddIngredients extends AppCompatActivity implements OnClickListener, android.text.TextWatcher {
+public class AddIngredients extends AppCompatActivity implements OnClickListener{
     Button addButton;
     EditText packagePrice;
     EditText ingredientName;
@@ -21,7 +19,6 @@ public class AddIngredients extends AppCompatActivity implements OnClickListener
         setContentView(R.layout.add_ingredient_form);
         findViews();
 
-        packagePrice.addTextChangedListener(this);
         addButton.setOnClickListener(this);
         dbHelper = new DBHelper(this);
 
@@ -49,21 +46,5 @@ public class AddIngredients extends AppCompatActivity implements OnClickListener
         dbHelper.addIngredient(nameString, priceCents);
 
         finish();
-    }
-
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        return;
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-        return;
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-        // TODO: do some validation magic here - make sure it's a proper currency
-        return;
     }
 }
