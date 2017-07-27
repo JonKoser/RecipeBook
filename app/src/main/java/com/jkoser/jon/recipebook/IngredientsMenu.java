@@ -26,7 +26,7 @@ public class IngredientsMenu extends AppCompatActivity implements OnClickListene
     private void findViews() {
         addIngredientMenuButton = (Button) findViewById(R.id.addIngredientMenuButton);
         editIngredientsButton = (Button) findViewById(R.id.editIngredientsButton);
-        deleteIngredientButton = (Button) findViewById(R.id.deleteButton);
+        deleteIngredientButton = (Button) findViewById(R.id.deleteIngredientsButton);
 
     }
 
@@ -43,7 +43,7 @@ public class IngredientsMenu extends AppCompatActivity implements OnClickListene
                 Intent intent = new Intent(this, AddIngredients.class);
                 startActivity(intent);
                 break;
-            case R.id.deleteButton:
+            case R.id.deleteIngredientsButton:
                 dbHelper = new DBHelper(this);
                 dbHelper.deleteAllIngredients();
         }

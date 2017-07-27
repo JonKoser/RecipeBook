@@ -25,10 +25,22 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS Ingredients (Name TEXT, Price_Cents INTEGER)");
-        // TODO: Create the other tables once I have the columns down :)
-        // db.execSQL("CREATE TABLE IF NOT EXISTS Recipes (Name TEXT, Price_Cents INTEGER)");
-        // db.execSQL("CREATE TABLE IF NOT EXISTS Recipe_Ingredients (Name TEXT, Price_Cents INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + INGREDIENTS_TABLE_NAME + " (" +
+                "Name TEXT PRIMARY KEY, " +
+                "Price_Cents INTEGER);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + RECIPES_TABLE_NAME + " (" +
+                "Name TEXT PRIMARY KEY, " +
+                "Type TEXT, Book TEXT, " +
+                "Page INTEGER, " +
+                "Ethnicity TEXT, " +
+                "Time INTEGER);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + RECIPE_INGREDIENTS_TABLE_NAME + " (" +
+                "Recipe_Name TEXT, " +
+                "Ingredient_Name TEXT, " +
+                "Quantity REAL, " +
+                "Unit TEXT, " +
+                "FOREIGN KEY(Recipe_Name) REFERENCES " + RECIPES_TABLE_NAME + "(Name), " +
+                "FOREIGN KEY(Ingredient_Name) REFERENCES " + INGREDIENTS_TABLE_NAME + "(Name));");
     }
 
     @Override
@@ -60,7 +72,7 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public String[] getIngredientNames() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor ingredients = db.rawQuery("SELECT Name FROM Ingredients", null);
+        Cursor ingredients = db.rawQuery("SELECT Name FROM " + INGREDIENTS_TABLE_NAME, null);
         ingredients.moveToFirst();
         int totalItems = ingredients.getCount();
         String[] names = new String[totalItems];
@@ -76,6 +88,13 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public void deleteAllIngredients() {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM Ingredients");
+        db.execSQL("DELETE FROM " + INGREDIENTS_TABLE_NAME);
+    }
+
+    /**
+     * Testing method - clears the Recipes table
+     */
+    public void deleteAllRecipes() {
+        Log.d("stuff!", "deleteAllRecipes: hi!");
     }
 }

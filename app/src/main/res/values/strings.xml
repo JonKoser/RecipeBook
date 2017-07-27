@@ -21,5 +21,9 @@
     <string name="package_price">Package Price</string>
     <string name="money">$</string>
     <string name="add_button">Add</string>
+    <string name="editRecipe">View/Edit Recipe</string>
+    <string name="addRecipe">Add a Recipe</string>
+    <string name="deleteAll">Delete All (Testing)</string>
+    <string name="recipeMenuTitle">Recipes</string>
 
 </resources>

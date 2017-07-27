@@ -19,6 +19,7 @@
         <activity android:name=".PickExistingIngredients"></activity>
         <activity android:name=".IngredientsMenu"></activity>
         <activity android:name=".AddIngredients"></activity>
+        <activity android:name=".RecipesMenu"></activity>
     </application>
 
 </manifest>

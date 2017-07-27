@@ -45,4 +45,13 @@ public class MainActivityMenu extends AppCompatActivity {
         Intent intent = new Intent(this, IngredientsMenu.class);
         startActivity(intent);
     }
+
+    /**
+     *
+     * @param view
+     */
+    public void onRecipeBookClick(View view) {
+        Intent intent = new Intent(this, RecipesMenu.class);
+        startActivity(intent);
+    }
 }
