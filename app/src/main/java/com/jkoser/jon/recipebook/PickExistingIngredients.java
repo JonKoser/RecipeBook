@@ -17,6 +17,10 @@ public class PickExistingIngredients extends AppCompatActivity implements OnClic
     DBHelper dbHelper;
     public static final String EXTRA_SELECTED_INGREDIENTS = "com.jkoser.recipebook.SELECTED_INGREDIENTS";
 
+
+    // TODO: I need to make this into a tabbed view which breaks the ingredients into meat, dairy, vegetables, grains, fruit, and other
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
