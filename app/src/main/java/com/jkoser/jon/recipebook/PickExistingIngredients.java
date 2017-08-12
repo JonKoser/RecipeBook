@@ -19,7 +19,7 @@ public class PickExistingIngredients extends AppCompatActivity implements OnClic
 
 
     // TODO: I need to make this into a tabbed view which breaks the ingredients into meat, dairy, vegetables, grains, fruit, and other
-
+    // TODO: I need to add a "select defaults" button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

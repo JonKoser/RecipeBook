@@ -25,5 +25,6 @@
     <string name="addRecipe">Add a Recipe</string>
     <string name="deleteAll">Delete All (Testing)</string>
     <string name="recipeMenuTitle">Recipes</string>
+    <string name="add_recipe_title">Add a Recipe</string>
 
 </resources>
