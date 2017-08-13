@@ -27,7 +27,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + INGREDIENTS_TABLE_NAME + " (" +
                 "Name TEXT PRIMARY KEY, " +
-                "Price_Cents INTEGER);");
+                "Price_Cents INTEGER," +
+                "Type TEXT);");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + RECIPES_TABLE_NAME + " (" +
                 "Name TEXT PRIMARY KEY, " +
                 "Type TEXT, Book TEXT, " +
@@ -45,9 +46,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Ingredients");
-        db.execSQL("DROP TABLE IF EXISTS Recipes");
-        db.execSQL("DROP TABLE IF EXISTS Recipe_Ingredients");
+        db.execSQL("DROP TABLE IF EXISTS " + INGREDIENTS_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RECIPES_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RECIPE_INGREDIENTS_TABLE_NAME);
         onCreate(db);
     }
 
@@ -57,11 +58,12 @@ public class DBHelper extends SQLiteOpenHelper {
      * @param priceInCents
      * @return
      */
-    public boolean addIngredient(String name, int priceInCents) {
+    public boolean addIngredient(String name, int priceInCents, String type) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("Name", name);
         values.put("Price_Cents", priceInCents);
+        values.put("Type", type);
         database.insert("Ingredients", null, values);
         return true;
     }
@@ -95,6 +97,16 @@ public class DBHelper extends SQLiteOpenHelper {
      * Testing method - clears the Recipes table
      */
     public void deleteAllRecipes() {
-        Log.d("stuff!", "deleteAllRecipes: hi!");
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + RECIPES_TABLE_NAME);
+    }
+
+    public void deleteAllTables() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + INGREDIENTS_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RECIPES_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RECIPE_INGREDIENTS_TABLE_NAME);
+        onCreate(db);
     }
 }

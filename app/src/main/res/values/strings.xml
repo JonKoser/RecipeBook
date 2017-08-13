@@ -6,12 +6,6 @@
     <string name="menu_opt_three">Recipe Book</string>
     <string name="menu_opt_four">Ingredients</string>
     <string name="background_descrip">Background for main menu</string>
-    <string-array name="temp_array">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
-        <item>Four</item>
-    </string-array>
     <string name="existingIngredientTitle">Select which ingredients you already have:</string>
     <string name="nextButton">Next</string>
     <string name="ingredient_title">Ingredients</string>
@@ -26,5 +20,18 @@
     <string name="deleteAll">Delete All (Testing)</string>
     <string name="recipeMenuTitle">Recipes</string>
     <string name="add_recipe_title">Add a Recipe</string>
+    <string name="recipeIngredientsButton">Select Ingredients</string>
+    <string name="prevIngredient">Previous</string>
+    <string name="addAnotherIngredient">Add Another</string>
+    <string name="finished">Finished</string>
+    <string-array name="ingredient_types">
+        <item>Dairy</item>
+        <item>Meat</item>
+        <item>Grains</item>
+        <item>Vegetables</item>
+        <item>Fruit</item>
+        <item>Basics</item>
+    </string-array>
+
 
 </resources>

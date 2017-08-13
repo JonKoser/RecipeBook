@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MainActivityMenu extends AppCompatActivity {
     public static final String EXTRA_NEXT_ACTIVITY = "com.jkoser.recipebook.NEXT_ACTIVITY";
-
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +53,10 @@ public class MainActivityMenu extends AppCompatActivity {
     public void onRecipeBookClick(View view) {
         Intent intent = new Intent(this, RecipesMenu.class);
         startActivity(intent);
+    }
+
+    public void onResetDBClick(View view) {
+        dbHelper = new DBHelper(this);
+        dbHelper.deleteAllTables();
     }
 }
